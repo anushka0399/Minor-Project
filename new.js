@@ -3,13 +3,12 @@ const sendChatBtn = document.querySelector(".chat-input span");
 const chatbox = document.querySelector(".chatbox");
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const chatbotCloseBtn = document.querySelector(".close-btn");
-//import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 
-// console.log(process.env) 
-// dotenv.config({path:"./.env"});
-// console.log(process.env.API_KEY)
+console.log(process.env) 
+dotenv.config({path:"./.env"});
+console.log(process.env.API_KEY)
 let userMessage;
-const API_KEY = 'AIzaSyDnylqjOr4xR8q90d8iXkCn3zJXZSbiRW0';
 const inputInitHeight = chatInput.scrollHeight; 
 
 const createChatLi = (message, className) => {
@@ -72,17 +71,6 @@ const handleChat = () => {
   }, 600);
 };
 
-// chatInput.addEventListener("input", () => {
-//   chatInput.style.height = `${inputInitHeight}px`;
-//   chatInput.style.height = `${chatInput.scrollHeight}px`;
-// })
-
-// chatInput.addEventListener("keydown", (e) => {
-//   if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-//     e.preventDefault();
-//     handleChat();
-//   }
-// })
 
 sendChatBtn.addEventListener("click", handleChat);
 chatbotToggler.addEventListener("click", ()=> document.body.classList.remove("show-chatbot"));
